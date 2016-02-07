@@ -8,3 +8,14 @@ module.exports = (robot) ->
 
   robot.hear /fossalta/, (res) ->
     res.send "FOSSALTA L8"
+
+
+  robot.listen(
+    # Matcher
+    (message) ->
+      true
+
+    # Callback
+    (response) ->
+      console.log(response);
+  )
