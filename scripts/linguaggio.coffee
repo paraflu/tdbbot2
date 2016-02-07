@@ -24,8 +24,14 @@ module.exports = (robot) ->
   robot.hear /coc/i, (res) ->
     sendStiker robot, res, STK_COC
 
+  robot.hear /ceggia l8/i, (res) ->
+    sendStiker robot, res, STK_JARVIS
+
+  robot.hear /jesolo l8/i, (res) ->
+    res.reply "sseeee credici...."
+
   robot.hear /fossalta/i, (res) ->
-    sendPhoto robot, res, __dirname + "/images/fossaltal8.jpg"
+    sendPhoto robot, res, __dirname + "/../images/fossaltal8.jpg"
     #res.send "FOSSALTA L8"
 
 
