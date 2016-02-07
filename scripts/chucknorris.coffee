@@ -6,6 +6,6 @@ module.exports = (robot) ->
         .header('Accept', 'application/json')
         .get() (err, res, body) ->
           # error checking code here
-          console.log(body)
+          #console.log(body)
           data = JSON.parse body
           resp.send "#{data.value.joke}"
