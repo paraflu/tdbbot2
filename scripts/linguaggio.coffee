@@ -9,7 +9,7 @@ sendPhoto = (robot, res, fname) ->
       console.log(response);
 
 sendStiker = (robot, res, id) ->
-  robot.emit 'telegram:invoke', 'sendSticker', { chat_id: res.message.room, sticker_id: id }, (error, response) ->
+  robot.emit 'telegram:invoke', 'sendSticker', { chat_id: res.message.room, sticker: id }, (error, response) ->
       console.log(error);
       console.log(response);
 
