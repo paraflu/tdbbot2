@@ -23,9 +23,9 @@ module.exports = (robot) ->
 
   robot.hear /coc/i, (res) ->
     res.reply sendStiker STK_COC
-    
+
   robot.hear /fossalta/i, (res) ->
-    sendPhoto res, dirname__ + "/images/fossaltal8.png"
+    sendPhoto res, __dirname + "/images/fossaltal8.png"
     #res.send "FOSSALTA L8"
 
 
