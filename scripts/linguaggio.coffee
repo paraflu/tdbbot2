@@ -9,7 +9,7 @@ sendPhoto = (robot, res, fname) ->
       console.log(response);
 
 sendStiker = (robot, res, id) ->
-  robot.emit 'telegram:invoke', 'sendStiker', { chat_id: res.message.room, sticker_id: id }, (error, response) ->
+  robot.emit 'telegram:invoke', 'sendSticker', { chat_id: res.message.room, sticker_id: id }, (error, response) ->
       console.log(error);
       console.log(response);
 
@@ -25,7 +25,7 @@ module.exports = (robot) ->
     sendStiker robot, res, STK_COC
 
   robot.hear /fossalta/i, (res) ->
-    sendPhoto robot, res, __dirname + "/images/fossaltal8.png"
+    sendPhoto robot, res, __dirname + "/images/fossaltal8.jpg"
     #res.send "FOSSALTA L8"
 
 
