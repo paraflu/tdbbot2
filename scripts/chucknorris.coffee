@@ -7,5 +7,10 @@ module.exports = (robot) ->
         .get() (err, res, body) ->
           # error checking code here
           #console.log(body)
-          data = JSON.parse body
-          resp.send "#{data.value.joke}"
+          try
+            data = JSON.parse body
+            console.log(resp);
+            console.log(data);
+            resp.send "#{data.value.joke}"
+          catch error
+            console.log error
