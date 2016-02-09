@@ -34,9 +34,6 @@ module.exports = (robot) ->
     sendPhoto robot, res, __dirname + "/../images/fossaltal8.jpg"
     #res.send "FOSSALTA L8"
 
-
-
-
   robot.hear /ciao/i, (res) ->
     robot.logger.debug "res: " + res
     res.reply "ciao"
