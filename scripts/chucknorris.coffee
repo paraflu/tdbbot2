@@ -10,6 +10,6 @@ module.exports = (robot) ->
         .get() (err, res, body) ->
           try
             data = JSON.parse body
-            resp.send "#{(entities.decode(data.value.joke)}"
+            resp.send "#{entities.decode(data.value.joke)}"
           catch error
             console.log error
