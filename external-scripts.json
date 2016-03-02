@@ -8,6 +8,6 @@
   "hubot-maps",
   "hubot-rules",
   "hubot-shipit",
-  "hubot-ingress,
+  "hubot-ingress",
   "pg-brain"
 ]
