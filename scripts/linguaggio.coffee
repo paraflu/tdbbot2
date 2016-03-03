@@ -1,4 +1,4 @@
-fs = require('fs')
+var fs = require('fs')
 
 STK_JARVIS='BQADBAADPQQAAv1q5gNSipU1gQABY-UC';
 STK_COC = 'BQADAQAD6AEAAsGZigABPCp4PLTfUA8C';
