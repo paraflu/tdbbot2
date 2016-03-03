@@ -1,5 +1,4 @@
 tldr_print = (user_id, tldrs) ->
-      console.log tldrs
       msg = ""
       msg += "#{i} #{tldr}\n" for tldr, i in tldrs
       return msg
@@ -8,16 +7,14 @@ tldr_print = (user_id, tldrs) ->
 module.exports = (robot) ->
 
     robot.respond /tldr (.*)$/i, (msg) ->
-      console.log msg
       user_id = msg.envelope.user.id
-      console.log user_id
       message = msg.match[1].trim()
       if message != "" 
-        console.log "salva"
         robot.brain.tldr ?= []
         robot.brain.tldr[user_id] ?= []
         robot.brain.tldr[user_id].push(message)
       response = tldr_print user_id, robot.brain.tldr[user_id]  
+      robot.logger.debug response
       msg.replay response
 
     robot.respond /tldr (remove|clear) (\d+)/i, (msg) ->
