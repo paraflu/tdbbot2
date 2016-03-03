@@ -9,7 +9,7 @@ tldr_print = (user_id) ->
 module.exports = (robot) ->
 
     robot.respond /tldr (.*)$/i, (msg) ->
-      console.log "msg #{msg}"
+      console.log msg
       id = msg.user.id
       console.log id
       message = msg.match[1].trim()
