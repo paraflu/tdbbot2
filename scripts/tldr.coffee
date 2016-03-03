@@ -16,7 +16,7 @@ module.exports = (robot) ->
         robot.brain.tldr ?= []
         robot.brain.tldr[user_id] ?= []
         robot.brain.tldr[user_id].push(message)
-      msg.replay tldr_print id, robot.brain.tldr[user_id]
+      msg.replay tldr_print user_id, robot.brain.tldr[user_id]
 
     robot.respond /tldr (remove|clear) (\d+)/i, (msg) ->
       user_id = msg.envelope.user.id
