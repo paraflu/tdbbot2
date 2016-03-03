@@ -33,7 +33,7 @@ module.exports = (robot) ->
   if !database_url?
     throw new Error('pg-brain requires a DATABASE_URL to be set.')
 
-  Postgres.defaults.ssl
+  Postgres.defaults.ssl = true
   client = new Postgres.Client(database_url)
   client.connect()
   robot.logger.debug "pg-brain connected to #{database_url}."
