@@ -22,12 +22,10 @@ module.exports = (robot) ->
       user_id = msg.envelope.user.id
 
       tldr_id = parseInt(msg.match[2],10)
-      robot.logger.debug msg
-      robot.logger.debug tldr_id
-      robot.logger.debug user_id
+      
       robot.logger.debug robot.brain.tldr[user_id]
         
-      if robot.brain.tldr[user_id]? && robot.brain.tldr[user_id][tldr_id]? 
+      if !robot.brain.tldr[user_id]? && !robot.brain.tldr[user_id][tldr_id]? 
         robot.brain.tldr[user_id].splice(tldr_id-1)
         msg.reply tldr_print user_id, robot.brain.tldr[user_id]
         
