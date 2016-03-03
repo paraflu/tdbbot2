@@ -8,14 +8,14 @@ module.exports = (robot) ->
 
     robot.respond /tldr (.*)$/i, (msg) ->
       console.log msg
-      id = msg.envelope.user.id
+      user_id = msg.envelope.user.id
       console.log id
       message = msg.match[1].trim()
       if message != "" 
         console.log "salva"
         robot.brain.tldr ?= []
-        robot.brain.tldr[id] ?= []
-        robot.brain.tldr[id].push(message)
+        robot.brain.tldr[user_id] ?= []
+        robot.brain.tldr[user_id].push(message)
       msg.replay tldr_print id, robot.brain.tldr[user_id]
 
     robot.respond /tldr (remove|clear) (\d+)/i, (msg) ->
