@@ -6,12 +6,13 @@ module.exports = (robot) ->
       return msg
 
     robot.respond /tldr (.*)$/, (msg) ->
-      message = msg.match[1].trim()
-      robot.logger.debug msg
       id = msg.user.id
-      res.brain.tldr ?= []
-      res.brain.tldr[id] ?= []
-      res.brain.tldr[id].push(message)
+      message = msg.match[1].trim()
+      if message != "" {
+          res.brain.tldr ?= []
+          res.brain.tldr[id] ?= []
+          res.brain.tldr[id].push(message)
+      }
       res.replay tldr_print(id)
 
     robot.respond /tldr (remove|clear) (\d+)/, (msg) ->
