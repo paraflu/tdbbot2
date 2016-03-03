@@ -9,7 +9,7 @@ module.exports = (robot) ->
     robot.respond /tldr (.*)$/i, (msg) ->
       console.log msg
       user_id = msg.envelope.user.id
-      console.log id
+      console.log user_id
       message = msg.match[1].trim()
       if message != "" 
         console.log "salva"
