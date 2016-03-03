@@ -3,7 +3,7 @@ module.exports = (robot) ->
     tldr_print = (user_id) ->
       tldrs = res.brain.tldr[user_id]
       msg += "#{i} #{tldr}\n" for tldr, i in tldrs
-        robot.logger.debug tldrs
+      robot.logger.debug tldrs
       return msg
 
     robot.respond /tldr (.*)$/i, (msg) ->
