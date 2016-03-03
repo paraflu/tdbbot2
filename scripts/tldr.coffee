@@ -15,7 +15,7 @@ module.exports = (robot) ->
         robot.brain.tldr[user_id].push(message)
       response = tldr_print user_id, robot.brain.tldr[user_id]  
       robot.logger.debug response
-      msg.replay "#{response}"
+      msg.reply "#{response}"
 
     robot.respond /tldr (remove|clear) (\d+)/i, (msg) ->
       user_id = msg.envelope.user.id
@@ -23,5 +23,5 @@ module.exports = (robot) ->
         
       if robot.brain.tldr[user_id]? && robot.brain.tldr[user_id][tldr_id]? 
         robot.brain.tldr[user_id].splice(tldr_id-1)
-        msg.replay tldr_print user_id, robot.brain.tldr[user_id]
+        msg.reply tldr_print user_id, robot.brain.tldr[user_id]
         
