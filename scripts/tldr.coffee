@@ -18,6 +18,7 @@ module.exports = (robot) ->
       msg.reply "#{response}"
 
     robot.respond /tldr (remove|clear) (\d+)/i, (msg) ->
+      robot.logger.debug "remove item"
       user_id = msg.envelope.user.id
 
       tldr_id = parseInt(msg.match[2],10)
