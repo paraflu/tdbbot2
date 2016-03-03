@@ -1,5 +1,6 @@
 tldr_print = (user_id, tldrs) ->
       console.log tldrs
+      msg = ""
       msg += "#{i} #{tldr}\n" for tldr, i in tldrs
       return msg
 
