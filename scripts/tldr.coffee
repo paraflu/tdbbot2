@@ -7,6 +7,7 @@ module.exports = (robot) ->
 
     robot.respond /tldr (.*)$/, (msg) ->
       message = msg.match[1].trim()
+      robot.logger.debug msg
       id = msg.from.id
       res.brain.tldr ?= []
       res.brain.tldr[id] ?= []
