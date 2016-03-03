@@ -6,7 +6,7 @@ tldr_print = (user_id, tldrs) ->
 
 module.exports = (robot) ->
 
-    robot.respond /tldr (.*)$/i, (msg) ->
+    robot.respond /^tldr\s(?!remove|clear)(.*)$/i, (msg) ->
       user_id = msg.envelope.user.id
       message = msg.match[1].trim()
       if message != "" 
