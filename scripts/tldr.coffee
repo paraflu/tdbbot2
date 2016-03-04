@@ -31,7 +31,7 @@ module.exports = (robot) ->
 
         robot.logger.debug robot.brain.data.tldr[user_id]
 
-        if !robot.brain.data.tldr[user_id]? && !robot.brain.data.tldr[user_id][tldr_id]?
+        if robot.brain.data.tldr[user_id] && robot.brain.data.tldr[user_id][tldr_id]
           robot.brain.data.tldr[user_id].splice(tldr_id-1)
           msg.reply tldr_print user_id, robot.brain.data.tldr[user_id]
       catch error
