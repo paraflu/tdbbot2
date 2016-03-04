@@ -1,8 +1,8 @@
 tldr_print = (user_id, tldrs) ->
-      i = 0;
+      i = 1;
       msg = ""
       for i in tldrs
-        item = tldrs[i]
+        item = tldrs[i++]
         msg += "#{i}) #{item}\n"
       return msg
 
