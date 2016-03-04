@@ -1,3 +1,20 @@
+# Description:
+#   "TLDR hanlder"
+#
+# Dependencies:
+#
+#
+# Configuration:
+#   None
+#
+# Commands:
+#   hubot tldr <input>
+#   hubot tldr clear|remove id
+#   hubot tldr
+#
+# Author:
+#   Andrea Forlin <andrea.forlin@gmail.com>
+
 tldr_print = (user_id, tldrs) ->
       i = 0;
       msg = ""
