@@ -1,6 +1,9 @@
 tldr_print = (user_id, tldrs) ->
+      i = 0;
       msg = ""
-      msg += "#{i+1}) #{tldr}\n" for tldr, i in tldrs
+      for i in tldrs
+        tldr = tldrs[i]
+        msg += "#{i}) #{tldr}"
       return msg
 
 
@@ -9,7 +12,7 @@ module.exports = (robot) ->
     robot.brain.on 'loaded', ->
       robot.brain.data.tldr ?= []
 
-    robot.respond /tldr\s(?!remove|clear)(.*)$/i, (msg) ->
+    robot.respond /tldr\s*(?!remove|clear)(.*)$/i, (msg) ->
       try
         user_id = msg.envelope.user.id
         message = msg.match[1].trim()
