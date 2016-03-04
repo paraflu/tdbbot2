@@ -34,5 +34,6 @@ module.exports = (robot) ->
         if robot.brain.data.tldr[user_id] && robot.brain.data.tldr[user_id][tldr_id]
           robot.brain.data.tldr[user_id].splice(tldr_id-1)
           msg.reply tldr_print user_id, robot.brain.data.tldr[user_id]
+          robot.logger.debug robot.brain.data.tldr[user_id]
       catch error
         msg.reply "Errore la cancellazione di #{tldr_id}: #{error}"
